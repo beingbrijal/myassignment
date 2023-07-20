@@ -17,7 +17,8 @@ pipeline {
         
       
         sh "docker run -itdp 80:80 --name brijal httpd"
-        sh "docker cp index.html brijal:/usr/local/apache2/htdocs"
+        sh "docker cp /mnt/deepika/index.html brijal:/usr/local/apache2/htdocs"
+    
         sh "docker exec brijal chmod -R 777 /usr/local/apache2/"
       }
     }
